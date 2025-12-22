@@ -8,7 +8,12 @@
         
 ul {
 /*    list-style-type: none; */
+    font-size: 14pt;
     line-height:1.5;
+}
+
+p {
+    font-size: 14pt;
 }
 
 ul li:before {
@@ -47,6 +52,10 @@ ul li:before {
 .small-text {
     font-size: 12px; 
     margin: 0px;
+}
+
+h1 {
+    font-size: 22pt;
 }
 
 a {
