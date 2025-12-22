@@ -7,12 +7,52 @@
 }
         
 ul {
-    list-style-type: none;
+/*    list-style-type: none; */
     line-height:1.5;
 }
 
 ul li:before {
-    content: '\2014';
+/*    content: '\2014'; */
     position: absolute;
     margin-left: -20px;
+}
+.date {
+    float: right;
+    font-size: 14px;
+    margin: 0px;
+}
+.collapsible {
+    background-color: #1110;
+    color: #ddd;
+    cursor: pointer;
+    width: 53.5%; /* Janky. To make the background colors line up with the text */
+    text-align: left;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.active, .collapsible:hover {
+    background-color: #2222;
+}
+
+.content {
+    padding: 0 20px;
+    display: none;
+    overflow: hidden;
+    background-color: #2222;
+    width: 50%;
+}
+
+.small-text {
+    font-size: 12px; 
+    margin: 0px;
+}
+
+a {
+    color: #ccc;
+}
+
+a:hover {
+    color:#d17292;
 }

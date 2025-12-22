@@ -1,11 +1,138 @@
 <!doctype html>
-
 <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <style>
-
+	h4 {
+	    size: 14;
+	    padding 0px;
+	    margin: 5px;
+	    text-decoration: underline;
+	}
     </style>
 </head>
 
-<body bgcolor="grey">
-    
+<body bgcolor=#444>
+    <div id="header"></div>
+    <div class="main">
+	<h1> Education </h1>
+	<p>Mathematics and Statistics student, 2023-2027 <br>
+	&emsp;Reed College, Portland OR, 97202</p>
+	<button type="button" class="collapsible"> <h2> Some relevant courses </h2> </button>
+	<div class="content">
+	   <ul>
+		<li> CSCI 382: Algorithms & Data Structures 
+		    <div class="date"> Spring 2026 </div>
+		<li> CSCI 378: Deep Learning
+		    <div class="date"> Spring 2026 </div>
+		<li> Math 321: Real Analysis
+		    <div class="date"> Fall 2025 </div>
+		<li> Math 346: Statistics Practicum
+		    <div class="date"> Fall 2025 </div>
+		<li> Math 392: Mathematical Statistics
+		    <div class="date"> Spring 2025 </div>
+		<li> Math 243: Statistical Learning
+		    <div class="date"> Spring 2025 </div>
+		<li> Math 391: Probability
+		    <div class="date"> Fall 2024 </div>
+		<li> Math 202: Vector Calculus
+		    <div class="date"> Fall 2024 </div>
+		<li> Physics 211: Oscillations & Waves
+		    <div class="date"> Fall 2024 </div>
+	    </ul>
+	</div>
+	<p></p>
+	<button type="button" class="collapsible"> <h2> Research Experience </h2> </button>
+	<div class="content">
+	    <ul>
+		<li> <b> Comparing the Comparators</b>, Math 343: Statistics Practicum
+		    <div class="date"> Fall 2025 </div>
+		    <ul style="font-size: 14px;">
+			<li> Worked with two peers and the Office for Institutional Research at Reed College.
+			<li> Created a statistical framework to cluster schools based on various attributes.
+			<li> Made an accesible tool for non-statisticians to use and specify arbitrary attribute preference.
+		    </ul>
+		<li> <b>REU: McNabb Lab</b>, Hampton University
+		    <div class="date"> Summer 2025 </div>
+		    <ul style="font-size: 14px;">
+			<li> Worked with satellite images of Earch in visual and infrared wavebands.
+			<li> Fit pseudo adversarial systems of neural networks to cluster the cloud data.
+			<li> Compared this to more traditional methods like K-Means.
+		    </ul>
+		<li> <b>Heath Lab</b>, Reed College
+		    <div class="date"> Fall 2023 - Spring 2025</div>
+		    <ul style="font-size: 14px;">
+			<h4>Fall 2024 - Spring 2025</h4>
+			<li> Worked with a modified Cavendish balance to estimate the force exerted by light.
+			<li> Programmed an apparatus to blink lasers at variable rates and did data analysis for a proof-of-concept data collection.
+			<li> See: <a href="#pendulum-paper">Russell et al., Measuring optical force with a torsion pendulum</a>. <br>
+			<h4>Fall 2023-Spring 2024</h4>
+			<li>Worked on image analysis of micron and non-meter scale images of low-layered materials and gold-nanoparticle composites.
+			<li> Worked with image alignment for direct comparison of treatments.
+			<li> Sought methods to summarize images to get coherent data and estimate sample thickness.
+			<li> Awarded the Gordon & Betty Moore Research Fellowship for spring research funding.
+		    </ul>
+		<li> <b>REU: Robbins Lab</b>, Cornell University
+		    <div class="date"> Summer 2024</div>
+		    <ul style="font-size: 14px;">
+			<li>Worked with harvest and image data from alfalfa fields.
+			<li>Ran mixed effect models and Bayesian models on harvest and image data.
+			<li>Compared different model types and data types.
+		    </ul>
+		<li> <b>Colvin Lab</b>, Brown University
+		    <div class="date"> Summer 2022</div>
+		    <ul>
+			<li> Did preliminary work for studies predicting sedimentation times of magnetic nanoparticles in liquid.
+			<li> Prepared samples, collected calibration data, and visualized data.
+		    </ul>
+	    </ul>
+	</div>
+	<p></p>
+	<button type="button" class="collapsible"> <h2> Publuications & Presentations</h2> </button>
+	<div class="content">
+	    <ul>
+		<h4> Publications </h4>
+		<li> <i>Measuring optical force with a torsion pendulum: a platform for independent student experimentation</i><p2 id="pendulum-paper"></p2> 
+		    <div class="date"> Aug 1, 2025 </div> <br>
+		    <div class="small-text"><b>L. Russell</b>, E. A. Rein, A. Piatigorsky, J. T. Heath - American Journal of Physics, <a href="10.1119/5.0268585">10.1119/5.0268585</a> </div>
+		<h4> Presentations: </h4>
+		<li> <i> Neural Network Clustering Methods on VIIRS Data </i>, Talk
+		    <div class="date"> July 16, 2025 </div> <br>
+		    <div class="small-text"> <b>L. Russell</b>, J.McNabb - Hampton University REU research presentations, Hampton University </div>
+		<li> <i>Bayesian Methods for Modeling Alfalfa Growth</i> - Talk
+		    <div class="date"> Sept 23, 2024 </div> <br>
+		    <div class="small-text"> <b> L. Russell </b>, D. Ghimire, F. Agosto, M. Chotai, K. Kunze, R. Thapa, K. Robbins - Students in Mathematics & Statistics colloquium, Reed College </div>
+		<li> <i>An Image Alignment Algorithm for 2d Heterostructures</i> - Talk
+		    <div class="date"> April 25, 2024 </div> <br>
+		    <div class="small-text"> <b> L. Russell</b>, P. J. Toledo-Urena, J. T. Heath - Moore Fellow Research Seminar, Reed College
+
+
+	    </ul>
+	</div>
+	<p></p>
+	<button type="button" class="collapsible"> <h2>Employment</h2> </button>
+	<div class="content">
+	    <ul>
+		<h4> Data-Lab </h4>
+		    <div class="date"> Fall 2025-Present </div>
+		    <li> Worked in Reed College's data lab.
+		    <li> Held regular office hours, helping students with data.
+		    <li> Created resources for faculty classes and the datalab's website.
+		<h4> Course assistant and grader - Math 391: Probability</h4>
+		    <div class="date"> Fall 2025 </div>
+		    <li> Held weekly office hours for help with problem sets and cumulative project work.
+		    <li> Graded part of weekly assignments.
+	    </ul>
+        </div>
+	<h2 style="padding: 10px; font-size: 20px"> <a href = "projects.html" style="color: #ccc">Projects</a></h2> 
+	<button type="button" class="collapsible"> <h2> Skills</h2> </button>
+	<div class="cuntent"> 
+	    <ul>
+		<li> Advanced proficiency: R, Python, LaTeX, bash
+		<li> Intermediate Proficiency: C/C++, git, Lua, HTML, OCaml, JAGS, ImageJ
+	    </ul>
+	</div>
+	<br> <br> <br> <br>
+    <script src="./includes.js"></script>
+    <script src="./drop_down.js"></script>
 </body>
