@@ -22,8 +22,7 @@ async function loadHTML(elementId, filePath) {
   } catch (error) {
     console.error('Error loading content:', error);
   }
-}
- 
+};
 // Load header and footer when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
   loadHTML('header', 'header.html'); // Load header into #header
