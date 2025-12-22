@@ -1,0 +1,18 @@
+/* Style page content */
+.main {
+    margin-left: 290px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+    color: #ccc;
+    font-size: 17px;
+}
+        
+ul {
+    list-style-type: none;
+    line-height:1.5;
+}
+
+ul li:before {
+    content: '\2014';
+    position: absolute;
+    margin-left: -20px;
+}
