@@ -11,7 +11,7 @@ clean:
 	touch del.synctex.gz
 	touch del.log
 	touch del.aux
-	# So they following commands don't error
+	# So the following commands don't error
 	rm *.out
 	rm *.synctex.gz
 	rm *.log

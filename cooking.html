@@ -1,0 +1,74 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <style>
+	.collapsible {
+	    width: 62.2%; /* Janky. To make the background colors line up with the text */
+	    margin-left: -10px;
+	    padding: 0px;
+	    margin: 0px;
+	    font-size: 12px;
+	}
+
+	.content {
+	    width: 58.5%;
+	    margin-left: 0px;
+	    padding 0px 20px;
+	    margin 40px;
+	}
+
+	src {
+	    width: 600px;
+	    height: 785px;
+	}
+    </style>
+</head>
+
+<body bgcolor=#444>
+    <div id="header"></div>
+    <div class="main">
+	<h2>My Cooking</h2>
+	In addition to baking I also like to cook. I originally started in middle or high school and have been going since. My food often takes on a spice-ier (in both senses) tone, but unlike with baking it's often far less noticable. I'm vegetarian so I won't have any recipes with meat, but I think they taste good. My cooking has also been inspired by Anna Jones' <a href="https://annajones.co.uk/">Easy Wins</a>, I think her way of cooking with recipes following ingredients is really well thought out and matches well with the way my family tends to cook. <br> <br>
+	Included here are some recipes I like. I've tried to roughly organize them into different types (soups, salads, dressings/marinades, etc.), but I'm certainly not perfect. I've also tried to take out some more common elements (i.e. a base for soup from all the soups) from the recipes to avoid repitition, but also some repitition is inevitable. As mentioned earlier, these are vegetarian, and like with baking, will often be dairy free as well (except for toppings). <br> <br>
+	As with most of this website right now, it's not terribly complete. I will continually add more recipes as time goes on, but right now I don't have a lot of recipes typed of, so it's a little bit sparse.
+
+	<ul>
+	    <li> <button type="button" class="collapsible"> <h2>Tomato Ring Dish</h2> </button>
+		<div class="content">
+		    <embed src="recipes/cooking/tomato_ring_dish.pdf" width="600px" height="785px">
+		</div>
+	    <li> <button type="button" class="collapsible"> <h2>Lentil-Tomato combination</h2> </button>
+		<div class="content">
+		    <embed src="recipes/cooking/tomato_lentil.pdf" width="600px" height="785px">
+		</div>
+	    <li> Soups:
+		<ul>
+		    <li> <button type="button" class="collapsible" style="width: 60.7%;"> <h2>Soup Base</h2> </button>
+			<div class="content" style="width: 57%;">
+			    <embed src="recipes/cooking/soup_base.pdf" width="600px" height=785px">
+			</div>
+		    <li> <button type="button" class="collapsible" style="width: 60.7%;"> <h2>Black Bean Soup</h2> </button>
+			<div class="content" style="width: 57%;" style="width: 60.7%;">
+			    <embed src="recipes/cooking/black_bean_soup.pdf" width="600px" height=785px">
+			</div>
+		    <li> <button type="button" class="collapsible"> <h2>Vegetarian Chili</h2> </button>
+			<div class="content" style="width: 57%;" style="width: 60.7%;">
+			    <embed src="recipes/cooking/veggie_chili.pdf" width="600px" height=785px">
+			</div>
+		</ul>
+	</ul>
+	    
+	<p></p>
+    </div>
+    
+    <script src="./js/includes.js"></script>
+    <script src="./js/drop_down.js"></script>
+    <script language=Javascript>
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+	for (i = 0; i < coll.length; i++) {
+	    coll[i].click();
+	}
+    </script>
+</body>
