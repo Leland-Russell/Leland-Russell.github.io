@@ -22,8 +22,9 @@ ul li:before {
     margin-left: -20px;
 }
 .date {
+    padding: 1px;
     float: right;
-    font-size: 14px;
+    font-size: 18px;
     margin: 0px;
 }
 .collapsible {
