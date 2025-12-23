@@ -1,0 +1,52 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <style>
+	.collapsible {
+	    width: 58.5%; /* Janky. To make the background colors line up with the text */
+	    margin-left: -10px;
+	}
+
+	.content {
+	    width: 55%;
+	    margin-left: -10px;
+	}
+
+	src {
+	    width: 600px;
+	    height: 785px;
+	}
+    </style>
+</head>
+
+<body bgcolor=#444>
+    <div id="header"></div>
+    <div class="main">
+	<h2>My Baking</h2>
+	I like to bake! Since I came to college baking has been a significant activity for me. I try to bake every weekend at school and whenever possible with other people. My family also really likes to bake, we have a ratio of close to 1:1 (ok, maybe 1:2) of pie-to-people at many larger family gatherings. It's a way to spend quality time with others and get something sweet out of it. <br> <br>
+	Included here are some recipes I've thought were good enough to type up. Often these will be dairy free as some of my family are allergic, but this often just means butter goes out for coconut oil. Sometimes it doesn't matter, sometimes it might be better with butter, but if it's here, I've probably thought it was good enough regardless. You might also find that I am strangely inclined to put "too many spices" in my food, you might pre-emptively dial that back, but you might also come to enjoy it as well.
+
+	<br> 
+	<button type="button" class="collapsible"> <h2>Chocolate & Berry "Tart"</h2> </button>
+	<div class="content">
+	    <embed src="recipes/baking/chocolate_berry_tart.pdf" width="600px" height="785x">
+	</div>
+	<button type="button" class="collapsible"> <h2>Almond cookies</h2></button>
+	<div class="content">
+	    <embed src="recipes/baking/almond_cookies.pdf" width="600px" height="785x">
+	</div>
+	<p></p>
+
+    </div>
+    
+    <script src="./js/includes.js"></script>
+    <script src="./js/drop_down.js"></script>
+    <script language=Javascript>
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+	for (i = 0; i < coll.length; i++) {
+	    coll[i].click();
+	}
+    </script>
+</body>
