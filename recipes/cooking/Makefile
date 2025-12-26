@@ -1,10 +1,19 @@
-BAKE_SOURCES := $(shell find ./ -type f -name '*.tex')
+SOURCES := $(shell find . -type f -name '*.tex')
 
 TEX := pdflatex
 
+FILE := nothing.tex
+#PDF := $(basename $(FILE)).pdf
+
+.PHONY: all individual clean
+
 all:
-	$(TEX) $(BAKE_SOURCES)
+#	echo $(SOURCES)
+	$(foreach file, $(SOURCES), $(shell make individual FILE=$(file)))
 	make clean
+
+individual:
+	$(TEX) $(FILE)
 
 clean:
 	touch del.out
