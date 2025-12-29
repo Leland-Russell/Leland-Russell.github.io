@@ -19,11 +19,34 @@
 \usepackage{changepage}
 \usepackage{enumitem}
 
-\textwidth=6in
+\textwidth=6.5in
 \textheight=9in
-\hoffset=-0.375in
+\hoffset=-0.75in
 \voffset=-0.75in
-\setlist{leftmargin=5mm} % make itemize's (for ingredients) have shorter margins
+
+\newenvironment{ingredients}
+	{\begin{itemize}[leftmargin=0mm, label={}]}
+	{\end{itemize}}
+
+\newenvironment{directions}
+	{\begin{enumerate}[leftmargin=5mm, label={\arabic*.}]}
+	{\end{enumerate}}
+	
+\newcommand{\recipe}[2]{
+\normalsize
+\columnratio{0.3,0.025,0.6}
+\begin{paracol}{3}
+\begin{adjustwidth}{0mm}{0cm}
+\noindent \large \textbf{Ingredients:} \\ \normalsize
+\end{adjustwidth}
+#1
+\switchcolumn
+\switchcolumn
+\noindent \large \textbf{Directions:} \\ \normalsize
+#2
+\end{paracol}
+}
 
 \setcounter{section}{0}
 \setcounter{table}{0} % Just in case I need a section in recipes (?)
+
