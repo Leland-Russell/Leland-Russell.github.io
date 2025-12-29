@@ -2,51 +2,109 @@
 % I probably don't need longtbale, but you never know when you'll need a long table. And then changepage is for
 % the \begin{adjustwidth}{·}{·} environment
 
-\usepackage{graphicx}
-\usepackage{amsfonts}
+\usepackage{graphicx} 
+\usepackage{amsfonts}% these are necessary
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage[T1]{fontenc}
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks]{hyperref} % so I can link other sites
 \usepackage{lmodern}
-\hypersetup{
-     colorlinks   = true,
-     citecolor    = gray
-}                   
+%\usepackage[symbol]{footmisc}
 
-\usepackage{paracol}
-\usepackage{longtable}
-\usepackage{changepage}
-\usepackage{enumitem}
+\usepackage{paracol} % for nice multi-column environments
+\usepackage{longtable} % better multi-page tables
+\usepackage{changepage} % adjustwidth environment (and others)
+\usepackage{enumitem} % itemize and such environment tweacks
+\usepackage[dvipsnames]{xcolor} % for named colors
 
 \textwidth=6.5in
 \textheight=9in
 \hoffset=-0.75in
 \voffset=-0.75in
 
+\hypersetup{
+     colorlinks   = true,
+     citecolor    = gray
+} 
+
+% Custom environments
 \newenvironment{ingredients}
-	{\begin{itemize}[leftmargin=0mm, label={}]}
+	{\begin{itemize}[leftmargin=0mm, label={}]
+	\setlength\itemsep{2 mm}}
 	{\end{itemize}}
 
 \newenvironment{directions}
-	{\begin{enumerate}[leftmargin=5mm, label={\arabic*.}]}
+	{\begin{enumerate}[leftmargin=5mm, label={\arabic*.}]
+	\setlength\itemsep{2 mm}}
 	{\end{enumerate}}
 	
-\newcommand{\recipe}[2]{
-\normalsize
-\columnratio{0.3,0.025,0.6}
-\begin{paracol}{3}
-\begin{adjustwidth}{0mm}{0cm}
-\noindent \large \textbf{Ingredients:} \\ \normalsize
-\end{adjustwidth}
+\newcommand{\setcolor}[1]{
+	\newcommand{\thecolor}{#1}
+} % for having some unifying colors
+
+\newcommand{\makecolor}{
+	\color{\thecolor}
+} % and for referencing the unifying color
+
+\newcommand{\resetcolor}{
+	\color{black}
+} % not for resetting \thecolor, but for setting color back to black
+
+\setcolor{RawSienna} % This is the current color we're using
+
+\newcommand{\note}[2][*]{
+\begin{adjustwidth}{0mm}{0mm} 
+#1 #2
+\end{adjustwidth}} % for notes. Not super high tech, I could repurpose footnotes, but for now I'll do it manually
+
+\newcommand{\subtitle}[1]{
+%\makecolor
+\begin{center}
 #1
-\switchcolumn
-\switchcolumn
-\noindent \large \textbf{Directions:} \\ \normalsize
-#2
+\end{center}
+%\resetcolor
+} % To label timing
+
+\newcommand{\desc}[1]{%
+#1 \\
+} % very barebones for now, can change nicely later.
+
+\patchcmd{\@maketitle}{\LARGE}{\Huge}{}{}
+	
+
+\renewcommand{\frac}[2]{#1/#2} % possible other fraction environment
+
+%% Custom recipe environment
+\newcommand{\recipe}[2]{
+%\renewcommand{\baselinestretch}{1.25}  % change linespacing within the actual recipe
+%\normalsize % also ensure that we have a normalsize in case something changed it
+\columnratio{0.3,0.01,0.6} % three column environment spacing
+\begin{paracol}{3} % and enter the environment
+\begin{adjustwidth}{0mm}{0cm}
+\noindent \large Ingredients \\ \normalsize
+\end{adjustwidth}
+\makecolor % set ingredient text
+#1 % the ingredients
+\switchcolumn % have one extra so there's a little bit of space between the two columns
+\switchcolumn % go to recipe
+\resetcolor% reset color
+\noindent \large Directions \\ \normalsize
+%\hfill \\ % either or, this or the above (\noindent \large Directions ......) line
+#2 % print recipes
 \end{paracol}
 }
 
 \setcounter{section}{0}
 \setcounter{table}{0} % Just in case I need a section in recipes (?)
+
+% Re-define the title. The framework for this was borrowed from this stack exchange
+%%https://tex.stackexchange.com/questions/126536/how-to-change-the-appearance-of-the-ams-article-title
+\makeatletter
+\def\@settitle{\begin{center}%
+  \baselineskip14\p@\relax
+    %\bfseries
+    \normalfont\LARGE
+  \textbf{\textcolor{\thecolor}{\@title}}
+  \end{center}%
+}
 
