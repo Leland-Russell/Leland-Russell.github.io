@@ -2,7 +2,8 @@
 .main {
     margin-left: 290px; /* Same as the width of the sidebar */
     padding: 0px 10px;
-    color: #ccc;
+/*    color: #333; */
+    color: #ccc; 
     font-size: 17px;
 }
         
@@ -46,6 +47,7 @@ ul li:before {
     padding: 0 20px;
     display: none;
     overflow: hidden;
+/*    background-color: #ddd2; */
     background-color: #2222;
     width: 50%;
 }
@@ -60,7 +62,8 @@ h1 {
 }
 
 a {
-    color: #ccc;
+    color: #ccc; 
+/*    color: #333; */
 }
 
 a:hover {

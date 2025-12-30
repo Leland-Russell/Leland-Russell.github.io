@@ -1,21 +1,14 @@
 \documentclass[12 pt, twoside]{amsart}
 
-%\usepackage{../current_style}
-\usepackage{./current_style}
+\usepackage{../current_style} % Must be in a child of recipes
 
 \begin{document}
 
-
-
 \title{My Recipes}
 \maketitle
-\vspace{-0.75 cm}
-\begin{center}
-    The cooking time
-\end{center}
-\vspace{0.375 cm}
-A little description
-\hfill \\
+\subtitle{The cooking time}
+
+\noindent \desc{A little description}
 
 \recipe{
 \begin{ingredients}
@@ -29,23 +22,3 @@ A little description
 }
 
 \end{document}
-
-
-%\hfill \\
-%\columnratio{0.4,0.5}
-%\begin{paracol}{2}	
-
-%\large
-%\noindent \textbf{Ingredients:} \\ 
-%\normalsize
-%\begin{itemize}
-%\item The ingredients
-%\end{itemize}
-%
-% \switchcolumn
-% \large\textbf{Directions} \\ \normalsize
-%\begin{enumerate}
-%\item[1.] The ingredients
-%\end{enumerate}
-%\end{paracol}
-%\end{document}
