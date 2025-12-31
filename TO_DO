@@ -11,6 +11,5 @@
     a. It compiles all but then error's, maybe it's an error in the make $(foreach ·, ·, ·)
     b. It's not actually a problem because I can pass -k when calling it in recipes/Makefile
 4. It would be nice to add JavaScript for changing between light background and dark text and dark background and light text
-    a. The biggest problem might be the `bgcolor` attribute I set in `<body>` (e.g. I use `<body bgcolor=__>`)
-    b. html has very limited functionality so I might have to include a js call there, in which case everything would probably have to be routed through js
+    a. Like with the image, this would have to persist across multiple pages
 5. It could be kind of fun to have like a blog with stuff. I'm not sure how much I'd have there, but could be fun.

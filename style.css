@@ -1,10 +1,32 @@
 /* Style page content */
+body {
+    background-color: #eee;
+    color: #333;
+}
+
+/*.dark-mode {
+    background-color: #333;
+    color: #ccc;
+}*/
+
+.pink-mode {
+    background-color: #9a4eae;
+    color: #e92186;
+}
+
 .main {
     margin-left: 290px; /* Same as the width of the sidebar */
     padding: 0px 10px;
 /*    color: #333; */
-    color: #ccc; 
+/*    color: #ccc; */
     font-size: 17px;
+}
+
+button {
+    background-color: unset;
+    border: unset;
+    color: unset;
+    text-decoration: underline;
 }
         
 ul {
@@ -22,17 +44,18 @@ ul li:before {
     position: absolute;
     margin-left: -20px;
 }
+
 .date {
     padding: 1px;
     float: right;
     font-size: 18px;
     margin: 0px;
 }
+
 .collapsible {
-    background-color: #1110;
-    color: #ddd;
+    background-color: #8880;
+    color: unset;
     cursor: pointer;
-    width: 53.5%; /* Janky. To make the background colors line up with the text */
     text-align: left;
     padding: 10px;
     border: none;
@@ -40,7 +63,7 @@ ul li:before {
 }
 
 .active, .collapsible:hover {
-    background-color: #2222;
+    background-color: #8882;
 }
 
 .content {
@@ -48,8 +71,7 @@ ul li:before {
     display: none;
     overflow: hidden;
 /*    background-color: #ddd2; */
-    background-color: #2222;
-    width: 50%;
+    background-color: #8882;
 }
 
 .small-text {
@@ -62,10 +84,10 @@ h1 {
 }
 
 a {
-    color: #ccc; 
+    color: unset; 
 /*    color: #333; */
 }
 
 a:hover {
-    color:#d17292;
+    color:#a06262;
 }
