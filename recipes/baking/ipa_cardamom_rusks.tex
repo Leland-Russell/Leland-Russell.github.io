@@ -1,0 +1,157 @@
+\documentclass[12 pt, twoside]{amsart}
+
+%%% This is a copy of ../current_style.sty
+%%% I copied it so that I could change *everything* into ipa
+
+% Style file for the recipes. Pretty simple but including a few somewhat niche packages (enumitem, paracol)
+% I probably don't need longtbale, but you never know when you'll need a long table. And then changepage is for
+% the \begin{adjustwidth}{·}{·} environment
+
+\usepackage{tipa}
+\usepackage{graphicx} % for \includefigure{}
+\usepackage{amsfonts} % these are necessary
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref} % so I can link other sites
+\usepackage{lmodern}
+%\usepackage[symbol]{footmisc}
+
+\usepackage{paracol} % for nice multi-column environments
+\usepackage{longtable} % better multi-page tables
+\usepackage{changepage} % adjustwidth environment (and others)
+\usepackage{enumitem} % itemize and such environment tweacks
+\usepackage[dvipsnames]{xcolor} % for named colors
+
+\textwidth=6.5in
+\textheight=9in
+\hoffset=-0.75in
+\voffset=-0.75in % 1 inch margins on each side
+
+\hypersetup{
+     colorlinks   = true,
+     citecolor    = gray
+} 
+
+%% Custom environments and commands
+% For ingredients
+\newenvironment{ingredients}
+	{\begin{itemize}[leftmargin=0mm, label={}]
+	\setlength\itemsep{2 mm}}
+	{\end{itemize}}
+
+% For directions
+\newenvironment{directions}
+	{\begin{enumerate}[leftmargin=5mm, label={\arabic*.}]
+	\setlength\itemsep{2 mm}}
+	{\end{enumerate}}
+
+\newcommand{\setcolor}[1]{
+	\newcommand{\thecolor}{#1}
+} % for having some unifying colors
+
+\newcommand{\makecolor}{
+	\color{\thecolor}
+} % and for referencing the unifying color
+
+\newcommand{\resetcolor}{
+	\color{black}
+} % not for resetting \thecolor, but for setting color back to black
+
+\setcolor{RawSienna} % This is the current color we're using
+
+\newcommand{\note}[2][*]{
+\begin{adjustwidth}{0mm}{0mm} 
+#1 #2
+\end{adjustwidth}} % for notes. Not super high tech, I could repurpose footnotes, but for now I'll do it manually
+
+\newcommand{\subtitle}[1]{
+%\makecolor
+\vspace{-0.75 cm}
+\begin{center}
+#1
+\end{center}
+\vspace{0.375 cm}
+%\resetcolor
+} % To label timing
+
+\newcommand{\desc}[1]{%
+#1 \\
+} % very barebones for now, can change nicely later.	
+
+\renewcommand{\frac}[2]{#1/#2} % possible other fraction environment
+% In general, the \frac command can be changed as we like here
+
+%% Custom recipe command
+\newcommand{\recipe}[2]{
+%\renewcommand{\baselinestretch}{1.25}  % change linespacing within the actual recipe
+\columnratio{0.3,0.01,0.6} % three column environment spacing
+\begin{paracol}{3} % and enter the environment
+\begin{adjustwidth}{0mm}{0mm}
+  \noindent \large \textipa{IN"g\textturnr idi@nts} \\ \normalsize
+\end{adjustwidth}
+\makecolor % set ingredient text
+#1 % the ingredients
+\switchcolumn % have one extra column so there's a little bit of space between the two columns
+\switchcolumn % go to recipe
+\resetcolor % reset color
+\noindent \large \textipa{d\s{\textturnr}"\textturnr EkS@ns} \\ \normalsize
+%\hfill \\ % either or, this or the above (\noindent \large Directions ......) line
+#2 % print recipes
+\end{paracol}
+}
+
+\setcounter{section}{0}
+\setcounter{table}{0} % Just in case I need a section in recipes (?)
+
+% Re-define the title. The framework for this was borrowed from this stack exchange
+%%https://tex.stackexchange.com/questions/126536/how-to-change-the-appearance-of-the-ams-article-title
+\makeatletter
+\def\@settitle{\begin{center}%
+  \baselineskip14\p@\relax
+    %\bfseries
+    \normalfont\LARGE
+  \textbf{\textcolor{\thecolor}{\@title}}
+  \end{center}%
+}
+
+% I want to have something like \footnote{} for notes I include
+% But it's not so easy to just use the \footnote{} command. I want all the notes to be after the recipe, and using a \footnote{} in the ingredients would make that sad and not work.
+% I might make a custom \note{} command like footnote to do that
+
+\begin{document}
+
+\title{\textipa{"kA\s{\textturnr}d@m@m \textturnr2sks}}
+\maketitle
+\subtitle{30 \textipa{"mIn@ts pl2s} 30 \textipa{mO\s{\textturnr} @f "tSIlIN \ae nd "Almoust} 90 \textipa{fO\s{\textturnr} "beikIN}}
+
+\noindent \desc{\textipa{%
+Diz "kUkiz, ``\textturnr2sks'', @"\textturnr IdZ@n@li fO\textturnr\ "dIpIN In @ mIlk-laIk sup, w\s{\textturnr}k f\ae n"t\ae stIkli wIT ti. O"\textturnr IdzIn@li "teik@n f\textturnr2m "nIkoUl "\ae k@toUl@z ``"sk\ae ndIneivi@n f\textturnr2m sk\textturnr\ae tS'', aIv "mAd@faId Dem tu IN"klud mO\textturnr\ "kA\s{\textturnr}d@m@m, @ bIt @v "n2tmEg, \ae nd s2m taim tu tSIl In D@ f\textturnr IdZ. aIv Alsou "tSeindZd D@ "beikIN p\textturnr AsEs @ "dis@nt bit, "kUkIN \ae t @ "lIt\s{l} bIt "haij\s\textturnr\ @v @ "tEmp\s{\textturnr}tS\s{\textturnr}, fO\textturnr\ @ bIt "lANg\s{\textturnr}, \ae nd "flIpIN t@ gEt @ "naIs\s{\textturnr} \ae nd mO\textturnr\ "junIfO\textturnr m "k2l\s{\textturnr} An itS saId. "faIn@li, aIv dIpd DEm In "tSAkl@t.
+}}
+
+\recipe{
+\begin{ingredients}
+\item 1 \textipa{stIk @v b2d\s{\textturnr}}
+\item $\frac{1}{4}$ \textipa{k2p SUg\s{\textturnr}}
+\item 2 tbsp \textipa{hOl mIlk, pl2s @"n2D\s{\textturnr}, \textturnr @"z\s{\textturnr}vd}
+\item 2 \textipa{Egz}
+\item 2 \textipa{k2ps Al "p\s{\textturnr}p@s flau\s{\textturnr}}
+\item $\frac{3}{4}$ tsp \textipa{"beikIN "paud\s{\textturnr}}
+\item $\frac{1}{4}$ tsp \textipa{sAlt}
+\item 2 tsp \textipa{ka\s{\textturnr}d@m@m}
+\item 1 tsp \textipa{"n2PmEg}
+\item $\frac{1}{3}$ \textipa{k2p} 60\% \textipa{"tSAkl@t}
+\end{ingredients}
+}{
+\begin{directions}
+\item \textipa{In @ boul (pr@"f\s{\textturnr}@bli fO\textturnr\ @ st\ae nd "mIks\s{\textturnr}) k\textturnr im D@ "b@t\s{\textturnr} \ae nd "SU\s{\textturnr} @ntIl D@ "S@g\s{\textturnr} h\ae s "dIs@pi\textturnr d. \ae d mIlk \ae nd Egz \ae nd bit s@m mO\textturnr}---\textipa{Dei SUd bi "p\textturnr Iti wel InN"kO\textturnr p\s{\textturnr}eid@d, b2t dount "w\s{\textturnr}\textturnr i If Dei A\s{\textturnr}nt.}
+\item \textipa{In @ "sEp\textturnr @t bOl "k2mbaIn D@ flau\textturnr, "beikIN "paud\s{\textturnr}, sAlt, "cA\s{\textturnr}d@m@m, \ae nd "n2tmEg. \ae d tu D@ b2d\s{\textturnr} mIkstS\s{\textturnr} \ae nd mIks t@"gED\s{\textturnr} fO\s{\textturnr} @ fiu mIn@ts, 2ntIl DErs @ "s2mw@t d\textturnr aI douP}---\textipa{ju mei nid tu nid baI h\ae nd. lEt \textturnr Est In D@ f\textturnr IdZ fO\textturnr @ h\ae f Pau\textturnr}.
+\item \textipa{"p\textturnr ihit D@ "2v@n tu} 325. \textipa{d@"vaId dou "Intu fO\textturnr "pis@s \ae nd DEn \textturnr ol itS "Intu @ lAg. aI \textturnr ol DEm sou DeI h\ae v "2baut \ae n IntS @f "daI\ae m@t\s{\textturnr}, b2t If ju wAnt @ "lA\s{\textturnr}dZ\s{\textturnr} O\textturnr smAl\s{\textturnr} "kUki ju k\ae n \textturnr oul DEm mO\textturnr  O\textturnr lEs}.
+\item \textipa{beik fO\textturnr @"baut }15\textipa{ "mIn@ts, "2ntIl j2st "stA\s\textturnr tINg tu gEt s2m "k2l\s\textturnr. louw\s\textturnr D@ hit tu} 225 \textipa{\ae nd k2t De logs Intu \textturnr 2fli} cm \textipa{IntS "slaIs@s}. 
+\item \textipa{pleIs feis daun An D@ "beikINg shit \ae nd beik fO\textturnr} 30-40 \textipa{"mIn@ts, O\textturnr "2ntIl D@ feis-daun saId Is "gould@n. DEn flIp DEm ouv\s\textturnr \ae nd beik fO\textturnr @"n2D\s\textturnr} 15-20 \textipa{mIn@ts}.
+\item \textipa{w2ns All A\s\textturnr d2n "beikIN, mElt "tSAcl@t wIT "Ekst\textturnr @} 1 tbsp \textipa{mIlk ouv\s\textturnr @ "d2bl "bOIl\s\textturnr, dIp D@ \textturnr2sks In "tSAkl@t An w2n saId \ae nd lEt rEst An D@ "2D\s\textturnr waIl Dei draI}.
+\end{directions}
+}
+
+\end{document}
+

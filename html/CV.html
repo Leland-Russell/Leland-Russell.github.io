@@ -3,21 +3,25 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/style.css">
     <style>
+	h2 {
+	    text-decoration: none;
+	}
+
 	h4 {
 	    size: 14;
 	    padding 0px;
-	    margin: 5px;
+	    margin: -20px;
 	    display: inline;
-<!--	    text-decoration: underline; -->
+	    text-decoration: none;
 	}
 
 	b {
-	    padding 0px;
+	    padding: 0px;
 	    margin: 0px;
 	}
 
-	.small-text {
-	    font-size: 14px;
+	.description {
+	    font-size: 15px;
 	}
 
 	.collapsible {
@@ -40,6 +44,19 @@
 	<h1> Education </h1>
 	<p>Mathematics and Statistics student, 2023-2027 <br>
 	&emsp;Reed College, Portland OR, 97202</p>
+	<button type="button" class="collapsible"> <h2> Fellowships and Awards </h2> </button>
+	<div class="content">
+	    <ul>
+		<li> Excellence in Scholarship
+		    <div class="date"> Spring 2024, 2025, 2026 </div>
+		<li> Reed College Science Research Fellowship
+		    <div class="date"> Summer 2026 </div>
+		<li> Reed College Opportunity Grant
+		    <div class="date"> Summer 2026 </div>
+		<li> Gordon and Betty Moore Research Fellowship
+		    <div class="date"> Spring 2024 </div>
+
+	</div>
 	<button type="button" class="collapsible"> <h2> Some relevant courses </h2> </button>
 	<div class="content">
 	   <ul>
@@ -69,6 +86,20 @@
 	<button type="button" class="collapsible"> <h2> Research Experience </h2> </button>
 	<div class="content">
 	    <ul>
+		<li> <b> Undergraduate Forestry Data Science </b>, Reed College
+		    <div class="date"> Summer 2026-Present </div>
+		    <ul style="font-size:14px;">
+			<li> Compiling resources on estimating classical small area estimation frequentist models in the Bayesian paradigm
+			<li> Extending existing resources for simulations in the small area estimation setting for spatio-temporal correlation
+			<li> In progress
+		    </ul>
+		<li> <b> Pearce Lab </b>, Reed College
+		    <div class="date"> Spring 2026-Present </div>
+		    <ul style="font-size:14px;">
+			<li> Worked through theory of EM and MM estimation in the context of Mixtures of Benter distributions
+			<li> Implemented and tested EM estimation for estimating mixtures of Benter distributions in R
+			<li> Presented work at the Classification Society Annual Meeting and the Cascadia R Conference
+		    </ul>
 		<li> <b> Comparing the Comparators</b>, Math 343: Statistics <br> Practicum
 		    <div class="date"> Fall 2025 </div>
 		    <ul style="font-size: 14px;">
@@ -118,17 +149,25 @@
 		<h4> Publications </h4>
 		<li> <i>Measuring optical force with a torsion pendulum: a platform for independent student experimentation</i><p2 id="pendulum-paper"></p2> 
 		    <div class="date"> Aug 1, 2025 </div> <br>
-		    <div class="small-text"><b>L. Russell</b>, E. A. Rein, A. Piatigorsky, J. T. Heath - American Journal of Physics, <a href="10.1119/5.0268585">10.1119/5.0268585</a> </div>
+		    <div class="description"><b>L. Russell</b>, E. A. Rein, A. Piatigorsky, J. T. Heath - American Journal of Physics, <a href="10.1119/5.0268585">10.1119/5.0268585</a> </div>
 		<h4> Presentations: </h4>
+		<li> <i> An R package for estimating a mixture of Benter models on ranked data </i>, Talk
+		    <div class="date"> June 27, 2026 </div>
+		    <div class="description"> <b>L. Russell</b>, M. Pearce - Cascadia R conference, Portland, OR </div>
+		</li>
+		<li> <i> An R package for estimating a mixture of Benter models on ranked data </i>, Poster
+		    <div class="date"> June 17, 2026 </div>
+		    <div class="description"> <b>L. Russell</b>, M. Pearce - Classification Society Annual Meeting, Nalifax NS </div>
+		</li>
 		<li> <i> Neural Network Clustering Methods on VIIRS Data</i>,<br> Talk
 		    <div class="date"> July 16, 2025 </div> <br>
-		    <div class="small-text"> <b>L. Russell</b>, J.McNabb - Hampton University REU research presentations, Hampton University </div>
+		    <div class="description"> <b>L. Russell</b>, J.McNabb - Hampton University REU research presentations, Hampton University </div>
 		<li> <i>Bayesian Methods for Modeling Alfalfa Growth</i>, Talk
 		    <div class="date"> Sept 23, 2024 </div> <br>
-		    <div class="small-text"> <b> L. Russell </b>, D. Ghimire, F. Agosto, M. Chotai, K. Kunze, R. Thapa, K. Robbins - Students in Mathematics & Statistics colloquium, Reed College </div>
+		    <div class="description"> <b> L. Russell </b>, D. Ghimire, F. Agosto, M. Chotai, K. Kunze, R. Thapa, K. Robbins - Students in Mathematics & Statistics colloquium, Reed College </div>
 		    <li> <i>An Image Alignment Algorithm for 2d Heterostructures</i>, <br> Talk
 		    <div class="date"> April 25, 2024 </div> <br>
-		    <div class="small-text"> <b> L. Russell</b>, P. J. Toledo-Urena, J. T. Heath - Moore Fellow Research Seminar, Reed College
+		    <div class="description"> <b> L. Russell</b>, P. J. Toledo-Urena, J. T. Heath - Moore Fellow Research Seminar, Reed College
 
 
 	    </ul>
@@ -142,18 +181,29 @@
 		    <li> Worked in Reed College's data lab.
 		    <li> Held regular office hours, helping students with data.
 		    <li> Created resources for faculty classes and the datalab's website.
+		</ul>
+		<ul>
 		<h4> Course assistant and grader - Math 391: Probability</h4>
 		    <div class="date"> Fall 2025 </div>
 		    <li> Held weekly office hours for help with problem sets and cumulative project work.
 		    <li> Graded part of weekly assignments.
+		</ul>
+		<ul>
+		<h4> Course assistant and grader - Math 392: Mathematical Statistics</h4>
+		    <div class="date"> Spring 2025 </div>
+		    <li> Held weekly office hours for help with problem sets and cumulative project work.
+		    <li> Graded weekly assignments.
+
 	    </ul>
         </div>
+<!--
 	<h2 style="padding: 10px; font-size: 20px"> <a href = "/html/projects.html">Projects</a></h2> 
+-->
 	<button type="button" class="collapsible"> <h2> Skills</h2> </button>
-	<div class="cuntent"> 
+	<div class="content"> 
 	    <ul>
-		<li> Advanced proficiency: R, Python, LaTeX, bash
-		<li> Intermediate Proficiency: C/C++, git, HTML, Lua, OCaml, JAGS, ImageJ
+		<li> Advanced proficiency: R, Python, LaTeX, POSIX sh, C/C++, git
+		<li> Intermediate Proficiency: HTML, Lua, OCaml, JAGS, ImageJ
 	    </ul>
 	</div>
 	<br> <br> <br> <br>
